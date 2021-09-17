@@ -1,0 +1,5 @@
+name: PluginReloader
+main: nl.rkslot.pluginreloader.PluginReloader
+version: 1.0
+author: Derkades
+api-version: 1.13
