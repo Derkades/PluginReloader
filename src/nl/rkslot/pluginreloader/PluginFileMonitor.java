@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.command.PluginIdentifiableCommand;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -104,8 +105,8 @@ public class PluginFileMonitor {
 								for (final Map.Entry<String, Command> entry : knownCommands.entrySet()) {
 									final String name = entry.getKey();
 									final Command command = entry.getValue();
-									if (command instanceof PluginCommand) {
-										final PluginCommand pc = (PluginCommand) command;
+									if (command instanceof PluginIdentifiableCommand) {
+										PluginIdentifiableCommand pc = (PluginIdentifiableCommand) command;
 										if (pc.getPlugin() == plugin) {
 											toUnregister.add(command);
 											toRemove.add(name);
